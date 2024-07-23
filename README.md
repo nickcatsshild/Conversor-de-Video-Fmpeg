@@ -42,4 +42,4 @@ Foi incluido script para converter em h265 e tambem no formato vp8 e vp9 removen
 
 # CONVERSAO COM FFMPEG EM LINUX
 
-Tambem desenvolvi um script para usar no servdor linux pode ser usado como serviço onde tem um diretorio d eentradae um de saida.
+Tambem desenvolvi um script para usar no servdor linux pode ser usado como serviço onde tem um diretorio de entradae um diretorio de saida. ( Obsevação que faço ele consome um pouco de recurso ao estar ativado como serviço )
