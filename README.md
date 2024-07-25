@@ -1,45 +1,68 @@
-# Conversor de Video Fmpeg
- Script converter videos com Fmpeg
- * Objetivo desse script é converter videos para o formatos desejaveis de uma forma automatizada e simples *
+# Video Converter with FFmpeg
 
-Antes de começar baixe e descompate o ffmpeg na ultima versão para dentro da pasta onde estão os scripts.
-Os executáveis do ffmpeg deve estar exatamente dentro do diretório onde estão os scripts.
-https://ffmpeg.org/download.html#build-windows
+## Purpose
 
-Para aqueles que preferem evitar o uso de programas baseados em linha de comando, desenvolvemos uma série de scripts simplificados para Windows. Estes scripts operam com a facilidade de arrastar e soltar. Basta baixar, descompactar os arquivos, arrastar seus vídeos para o script correspondente e o sistema executará as conversões instantaneamente.
+The goal of this script is to convert videos into desired formats in an automated and straightforward manner.
 
-Requisito Essencial: É necessário ter o FFMPEG instalado em seu computador. Caso não tenha, siga as instruções detalhadas em nosso artigo: "Como Instalar o FFEPG no Windows".
+## Introduction
 
-Faça o download dos Scripts Prontos FFMPEG para Windows e Linux que em breve vou disponibilizar.
+Before we begin, let me explain my setup. I have a server running Jellyfin, and I'm in the process of organizing everything. This script works well if you have a graphics card capable of being used for encoding; it will perform efficiently. If you don't have such a card, the conversion will still work but might take longer.
 
-Abaixo, fornecemos uma breve explicação sobre cada script. Para uma compreensão mais detalhada, recomendamos assistir ao vídeo explicativo em nosso canal do YouTube.
+## Prerequisites
 
-Instruções de Uso:
-Certifique-se de ter o FFMPEG instalado em seu computador. Caso contrário, você pode baixar os arquivos compactados e descompactá-los na mesma pasta onde estão localizados os scripts.
+Download and extract the latest version of FFmpeg into the folder where the scripts are located. The FFmpeg executables must be within the same directory as the scripts.
+[Download FFmpeg](https://ffmpeg.org/download.html#build-windows)
 
-    Video para MKV
-        Converte arquivos de áudio único de vários formatos para MKV. Este script apenas altera o contêiner para MKV, mantendo o restante inalterado.
+For those who prefer to avoid command-line programs, we have developed a series of simplified drag-and-drop scripts for Windows.
 
-    Video para MP4 áudio único
-        Converte arquivos de áudio único de vários formatos para MP4. Este script apenas altera o contêiner para MP4, mantendo o restante inalterado.
+### Key Requirement
 
-    Áudio para AAC
-        Altera apenas o codec de áudio de um vídeo, mantendo o restante inalterado, incluindo o contêiner.
+You must have FFmpeg installed on your computer. If you don't, follow the detailed instructions in our article: "How to Install FFmpeg on Windows."
 
-    Video para MP4 Dual
-        Converte arquivos de áudio dual de vários formatos para MP4. Este script altera o contêiner para MP4, preservando as duas faixas de áudio e mantendo o restante inalterado.
+Download the ready-made FFmpeg scripts for Windows and Linux, which will be available soon.
 
-    Video Para MP4 H264 AAC
-        Converte o vídeo para MP4, alterando o codec de vídeo para H264 e o áudio para AAC, proporcionando maior compatibilidade para streaming com Plex, Emby ou Jellyfin. Este script é aplicável apenas a arquivos de áudio único.
+## Script Overview
 
-    Video para MP4 Dual H264
-        Converte o vídeo para MP4, alterando o codec de vídeo para H264 e mantendo as duas faixas originais de áudio. Ideal para maior compatibilidade de streaming com Plex, Emby e Jellyfin.
+Here, we provide a brief explanation of each script. For a more detailed understanding, we recommend watching the explanatory video on our YouTube channel.
 
-# NOVOS SCRIPTS
+## Usage Instructions
 
-Mais algumas atualizações acabei fazendo a fim de contribuir para melhorar a conversão.
-Foi incluido script para converter em h265 e tambem no formato vp8 e vp9 removendo meta tags dos videos e mantendo mesmo tamanho do video.
+1. Ensure FFmpeg is installed on your computer. If not, download and extract the files into the same folder as the scripts.
 
-# CONVERSAO COM FFMPEG EM LINUX
+### Scripts
 
-Tambem desenvolvi um script para usar no servdor linux pode ser usado como serviço onde tem um diretorio de entradae um diretorio de saida. ( Obsevação que faço ele consome um pouco de recurso ao estar ativado como serviço )
+#### Video to MKV
+
+- Converts single audio track files from various formats to MKV. This script only changes the container to MKV, leaving the rest unchanged.
+
+#### Video to Single Audio MP4
+
+- Converts single audio track files from various formats to MP4. This script only changes the container to MP4, leaving the rest unchanged.
+
+#### Audio to AAC
+
+- Changes only the audio codec of a video, leaving the rest unchanged, including the container.
+
+#### Video to Dual Audio MP4
+
+- Converts dual audio track files from various formats to MP4. This script changes the container to MP4, preserving both audio tracks and leaving the rest unchanged.
+
+#### Video to MP4 H264 AAC
+
+- Converts the video to MP4, changing the video codec to H264 and the audio codec to AAC, providing better compatibility for streaming with Plex, Emby, or Jellyfin. This script is applicable only to single audio track files.
+
+#### Video to Dual Audio MP4 H264
+
+- Converts the video to MP4, changing the video codec to H264 while keeping both original audio tracks. Ideal for better streaming compatibility with Plex, Emby, and Jellyfin.
+
+## New Scripts
+
+I have made some updates to improve conversion further. Included are scripts to convert to H265, VP8, and VP9 formats, removing meta tags from videos while maintaining the same video size.
+
+## Conversion with FFmpeg on Linux
+
+I also developed a script for use on a Linux server, which can be used as a service with an input and output directory. (Note: Running it as a service consumes some resources, so I do not recommend it.)
+
+---
+
+Feel free to download and use these scripts to simplify your video conversion tasks and enhance your media library organization.
