@@ -1,0 +1,33 @@
+@echo off
+
+REM Loop para cada argumento (item arrastado)
+:loop
+if "%~1"=="" goto end
+
+REM Obtém o diretório do arquivo de vídeo original
+set "videoDir=%~dp1"
+
+REM Cria um diretório para o item atual na pasta temporária
+mkdir "D:\video\temp\%~n1"
+
+REM Itera pelos arquivos no diretório atual (%~1)
+FOR /F "tokens=*" %%G IN ('DIR "%~1" /B /S /A:-d') do (
+    REM Itera pelos arquivos no subdiretório atual (%%G)
+    FOR /F "tokens=*" %%H IN ('DIR "%%G" /B /A:-d') do (
+        REM Obtém o nome do arquivo sem extensão
+        set "fileName=%%~nH"
+
+        REM Executa o HandBrakeCLI para converter o arquivo de vídeo
+        "C:\Program Files\Handbrake\HandBrakeCLI" -i "%%G" -o "%videoDir%\%~n1\!fileName!.mp4" -e nvenc_h265 -q 26 --cfr --aencoder av_aac -E copy --all-audio --all-subtitles --optimize --verbose=1 
+      
+        REM Remove as meta tags usando mkvpropedit
+        mkvpropedit "%videoDir%\%~n1\!fileName!.mp4" --delete-attachment all --tags all:
+    )
+)
+
+REM Desloca os argumentos para processar o próximo item
+shift
+goto loop
+
+:end
+pause
